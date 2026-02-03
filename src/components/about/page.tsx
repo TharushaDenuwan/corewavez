@@ -38,24 +38,28 @@ function About() {
 
   const team = [
     {
-      name: 'Founder & CEO',
-      role: 'Digital Visionary',
-      description: 'Leading CoreWavez with a passion for transforming businesses through innovative technology solutions.'
+      
+      role: 'Founder & CEO',
+      description: 'Leading CoreWavez with a passion for transforming businesses through innovative technology solutions.',
+      image: '/dil.png'
     },
     {
-      name: 'Tech Lead',
-      role: 'Full-Stack Developer',
-      description: 'Architecting scalable solutions and ensuring technical excellence across all projects.'
+      
+      role: 'Tech Lead',
+      description: 'Architecting scalable solutions and ensuring technical excellence across all projects.',
+      image: '/taru.png'
     },
     {
-      name: 'Design Lead',
-      role: 'UI/UX Specialist',
-      description: 'Creating beautiful, intuitive interfaces that users love and businesses trust.'
+      
+      role: 'Social Media Handler',
+      description: 'Managing our online presence and engaging with our community across social platforms.',
+      image: '/parami.png'
     },
     {
-      name: 'Project Manager',
-      role: 'Delivery Expert',
-      description: 'Ensuring smooth project execution and exceeding client expectations on time and budget.'
+   
+      role: 'Project Manager',
+      description: 'Ensuring smooth project execution and exceeding client expectations on time and budget.',
+      image: '/mahesh.png'
     }
   ]
 
@@ -68,7 +72,7 @@ function About() {
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-white to-slate-50">
-      <div className="container mx-auto px-6 lg:px-12 py-20">
+      <div className="container px-6 py-20 mx-auto lg:px-12">
         {/* Hero Section */}
         <motion.header 
           className="mb-20 text-center"
@@ -76,54 +80,54 @@ function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full">
-            <span className="text-primary font-semibold text-sm">About Us</span>
+          <div className="inline-block px-4 py-2 mb-4 rounded-full bg-primary/10">
+            <span className="text-sm font-semibold text-primary">About Us</span>
           </div>
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-primary bg-clip-text text-transparent">
+          <h1 className="mb-6 text-5xl font-bold text-transparent bg-gradient-to-r from-slate-900 to-primary bg-clip-text">
             CoreWavez: Building Digital Futures
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="max-w-3xl mx-auto text-xl text-slate-600">
             We're a team of passionate developers, designers, and problem-solvers dedicated to delivering smart, scalable, and secure digital solutions that transform businesses.
           </p>
         </motion.header>
 
         {/* Our Story */}
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-center"
+          className="grid items-center grid-cols-1 gap-12 mb-20 lg:grid-cols-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div>
-            <h2 className="text-4xl font-bold mb-6">Our Story</h2>
+            <h2 className="mb-6 text-4xl font-bold">Our Story</h2>
             <div className="space-y-4">
-              <p className="text-slate-600 text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-slate-600">
                 CoreWavez was founded with a simple mission: to help businesses leverage technology to solve real-world problems and achieve their goals.
               </p>
-              <p className="text-slate-600 text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-slate-600">
                 We started as a small team of passionate developers and have grown into a trusted partner for businesses across various industries, delivering countless successful projects from web apps to advanced POS systems.
               </p>
-              <p className="text-slate-600 text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-slate-600">
                 Today, we continue to grow while maintaining our core values of client-centricity, innovation, and quality. We're not just building software; we're building partnerships.
               </p>
             </div>
           </div>
           <motion.div 
-            className="bg-gradient-to-br from-primary/15 via-primary/5 to-transparent rounded-2xl p-12 h-96 flex items-center justify-center border border-primary/10"
+            className="relative flex items-center justify-center p-12 border rounded-2xl h-96 border-primary/10"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="text-center">
-              <motion.div 
-                className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
-                <Users size={40} className="text-primary" />
-              </motion.div>
-              <h3 className="text-2xl font-bold text-slate-900">Growing Team</h3>
-              <p className="text-slate-600 mt-2">Passionate professionals dedicated to your success</p>
-            </div>
+            <motion.img 
+              src="/team.png" 
+              alt="Growing Team" 
+              className="absolute inset-0 object-cover w-full h-full rounded-2xl"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
+            {/* <div className="relative z-10 text-center text-white">
+              <h3 className="text-2xl font-bold">Growing Team</h3>
+              <p className="mt-2">Passionate professionals dedicated to your success</p>
+            </div> */}
           </motion.div>
         </motion.div>
 
@@ -134,18 +138,18 @@ function About() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h2 className="text-4xl font-bold mb-12 text-center">Our Core Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="mb-12 text-4xl font-bold text-center">Our Core Values</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {values.map((value, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-primary hover:shadow-xl transition-all"
+                className="p-8 transition-all bg-white border rounded-2xl border-slate-200 hover:border-primary hover:shadow-xl"
                 whileHover={{ y: -5 }}
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
+                <div className="flex items-center justify-center w-12 h-12 mb-4 bg-primary/10 rounded-xl text-primary">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-2">{value.title}</h3>
+                <h3 className="mb-2 text-xl font-bold">{value.title}</h3>
                 <p className="text-slate-600">{value.description}</p>
               </motion.div>
             ))}
@@ -153,8 +157,8 @@ function About() {
         </motion.div>
 
         {/* Stats Section */}
-        <motion.div 
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
+        {/* <motion.div 
+          className="grid grid-cols-2 gap-6 mb-20 lg:grid-cols-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -162,15 +166,15 @@ function About() {
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
-              className="bg-gradient-to-br from-primary/10 to-primary/5 p-8 rounded-2xl text-center border border-primary/10 hover:border-primary/30"
+              className="p-8 text-center border bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border-primary/10 hover:border-primary/30"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-primary mb-3 flex justify-center">{stat.icon}</div>
-              <div className="text-4xl font-bold text-slate-900 mb-2">{stat.value}</div>
-              <p className="text-slate-600 font-medium">{stat.label}</p>
+              <div className="flex justify-center mb-3 text-primary">{stat.icon}</div>
+              <div className="mb-2 text-4xl font-bold text-slate-900">{stat.value}</div>
+              <p className="font-medium text-slate-600">{stat.label}</p>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Team */}
         <motion.div 
@@ -179,20 +183,18 @@ function About() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <h2 className="text-4xl font-bold mb-12 text-center">Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="mb-12 text-4xl font-bold text-center">Our Team</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {team.map((member, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white p-6 rounded-2xl border border-slate-200 hover:shadow-xl transition-all"
+                className="p-6 transition-all bg-white border rounded-2xl border-slate-200 hover:shadow-xl"
                 whileHover={{ y: -5 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full mb-4 flex items-center justify-center">
-                  <Users size={32} className="text-primary" />
-                </div>
-                <h3 className="text-lg font-bold mb-1">{member.name}</h3>
-                <p className="text-primary text-sm font-semibold mb-3">{member.role}</p>
-                <p className="text-slate-600 text-sm">{member.description}</p>
+                <img src={member.image} alt={member.name} className="object-cover w-16 h-16 mb-4 rounded-full" />
+                <h3 className="mb-1 text-lg font-bold">{member.name}</h3>
+                <p className="mb-3 text-sm font-semibold text-primary">{member.role}</p>
+                <p className="text-sm text-slate-600">{member.description}</p>
               </motion.div>
             ))}
           </div>
@@ -200,17 +202,17 @@ function About() {
 
         {/* CTA */}
         <motion.div 
-          className="bg-gradient-to-r from-primary via-primary/95 to-primary/90 text-white rounded-3xl p-12 text-center"
+          className="p-12 text-center text-white bg-gradient-to-r from-primary via-primary/95 to-primary/90 rounded-3xl"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
         >
-          <h2 className="text-4xl font-bold mb-4">Ready to Work Together?</h2>
-          <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+          <h2 className="mb-4 text-4xl font-bold">Ready to Work Together?</h2>
+          <p className="max-w-2xl mx-auto mb-8 text-lg opacity-90">
             Let's collaborate to turn your vision into reality with smart, scalable solutions.
           </p>
           <motion.button 
-            className="px-8 py-4 bg-white text-primary rounded-lg font-bold flex items-center justify-center gap-2 mx-auto hover:shadow-xl transition-shadow"
+            className="flex items-center justify-center gap-2 px-8 py-4 mx-auto font-bold transition-shadow bg-white rounded-lg text-primary hover:shadow-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
