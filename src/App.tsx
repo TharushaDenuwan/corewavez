@@ -8,6 +8,8 @@ import Portfolio from './components/portfolio/page';
 import Process from './components/process/page';
 import About from './components/about/page';
 import { Routes, Route } from 'react-router-dom';
+import Email from './components/email-form/page';
+import Media from './components/media/page';
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
                 <Hero />
                 <Features />
                 <Expertise />
+                <Email />
               </>
             }
           />
@@ -31,6 +34,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
+      <Media />
       <Footer />
     </div>
   );

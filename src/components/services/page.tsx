@@ -50,7 +50,7 @@ function Services() {
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <div className="container mx-auto px-6 lg:px-12 py-20">
+      <div className="container px-6 py-20 mx-auto lg:px-12">
         {/* Header */}
         <motion.header 
           className="mb-20 text-center"
@@ -58,38 +58,38 @@ function Services() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full">
-            <span className="text-primary font-semibold text-sm">Our Services</span>
+          <div className="inline-block px-4 py-2 mb-4 rounded-full bg-primary/10">
+            <span className="text-sm font-semibold text-primary">Our Services</span>
           </div>
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-primary bg-clip-text text-transparent">
+          <h1 className="mb-6 text-5xl font-bold text-transparent bg-gradient-to-r from-slate-900 to-primary bg-clip-text">
             Smart • Scalable • Secure Digital Solutions
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="max-w-3xl mx-auto text-xl text-slate-600">
             Comprehensive technology solutions designed to transform your business and drive growth
           </p>
         </motion.header>
 
         {/* Service Categories */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 gap-8 mb-20 lg:grid-cols-3">
           {serviceCategories.map((category, idx) => (
             <motion.div
               key={category.id}
-              className="bg-white rounded-2xl p-8 border border-slate-200 hover:border-primary hover:shadow-2xl transition-all duration-300"
+              className="p-8 transition-all duration-300 bg-white border rounded-2xl border-slate-200 hover:border-primary hover:shadow-2xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.2 }}
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/5 rounded-xl flex items-center justify-center text-primary mb-6">
+              <div className="flex items-center justify-center mb-6 w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/5 rounded-xl text-primary">
                 {category.icon}
               </div>
-              <h3 className="text-2xl font-bold mb-6">{category.title}</h3>
+              <h3 className="mb-6 text-2xl font-bold">{category.title}</h3>
               <div className="space-y-4">
                 {category.items.map((item, i) => (
                   <div key={i} className="flex items-start gap-3 group">
-                    <div className="text-primary mt-1 group-hover:scale-110 transition-transform">
+                    <div className="mt-1 transition-transform text-primary group-hover:scale-110">
                       {item.icon}
                     </div>
-                    <span className="text-slate-700 group-hover:text-primary transition-colors">{item.label}</span>
+                    <span className="transition-colors text-slate-700 group-hover:text-primary">{item.label}</span>
                   </div>
                 ))}
               </div>
@@ -104,20 +104,20 @@ function Services() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Why Choose CoreWavez?</h2>
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-4xl font-bold">Why Choose CoreWavez?</h2>
             <p className="text-lg text-slate-600">Industry-leading expertise and commitment to excellence</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((item, idx) => (
               <motion.div
                 key={idx}
-                className="bg-gradient-to-br from-primary/5 to-transparent p-6 rounded-xl border border-primary/10 hover:border-primary/30 transition-all hover:shadow-lg"
+                className="p-6 transition-all border bg-gradient-to-br from-primary/5 to-transparent rounded-xl border-primary/10 hover:border-primary/30 hover:shadow-lg"
                 whileHover={{ y: -5 }}
               >
-                <div className="text-primary mb-4">{item.icon}</div>
-                <h4 className="font-bold text-lg mb-2">{item.title}</h4>
+                <div className="mb-4 text-primary">{item.icon}</div>
+                <h4 className="mb-2 text-lg font-bold">{item.title}</h4>
                 <p className="text-slate-600">{item.desc}</p>
               </motion.div>
             ))}
@@ -126,17 +126,17 @@ function Services() {
 
         {/* CTA Section */}
         <motion.div 
-          className="bg-gradient-to-r from-primary via-primary/95 to-primary/90 text-white rounded-3xl p-12 text-center"
+          className="p-12 text-center text-white bg-gradient-to-r from-primary via-primary/95 to-primary/90 rounded-3xl"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
-          <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+          <h2 className="mb-4 text-3xl font-bold">Ready to Transform Your Business?</h2>
+          <p className="max-w-2xl mx-auto mb-8 text-lg opacity-90">
             Let's discuss how our solutions can help you achieve your goals
           </p>
           <motion.button 
-            className="px-8 py-4 bg-white text-primary rounded-lg font-bold flex items-center justify-center gap-2 mx-auto hover:shadow-xl transition-shadow"
+            className="flex items-center justify-center gap-2 px-8 py-4 mx-auto font-bold transition-shadow bg-white rounded-lg text-primary hover:shadow-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
